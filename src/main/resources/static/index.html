@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Store</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="/css/style.css"> </head>
+<body>
+<div id="product-list">
+    <h2>Our Products</h2>
+    <div class="product-card">
+        <h3>Cool T-Shirt</h3>
+        <p>$20.00</p>
+        <button class="buy-button" data-product-id="tshirt_001">Buy T-Shirt ($20)</button>
+    </div>
+    <div class="product-card">
+        <h3>Fancy Hat</h3>
+        <p>$15.00</p>
+        <button class="buy-button" data-product-id="hat_001">Buy Hat ($15)</button>
+    </div>
+</div>
+
+<div id="checkout-section" style="display: none;">
+    <button id="back-to-store">Back to Store</button>
+    <h2>Complete Your Purchase</h2>
+    <form id="payment-form">
+        <div id="payment-element"></div>
+        <button id="submit">
+            <span id="button-text">Pay Now</span>
+            <span id="spinner" style="display: none;">Processing...</span>
+        </button>
+        <div id="error-message"></div>
+    </form>
+</div>
+
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

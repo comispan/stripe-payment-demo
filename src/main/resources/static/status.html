@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Payment Status</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+<div id="status-container">
+    <h1 id="status-heading">Checking payment status...</h1>
+    <p id="status-message"></p>
+    <div id="transaction-details" style="margin: 20px 0; padding: 10px; background: #f4f4f4; border-radius: 5px; font-family: monospace;">
+    </div>
+    <a href="index.html">Back to Store</a>
+</div>
+<script type="module">
+    import { checkStatus } from './js/checkout.js';
+
+    // 1. Detect if this window was opened as a redirect/popup
+    if (window.opener && window.opener !== window) {
+        // Optional: Ensure the main window is focused
+        window.opener.focus();
+        // Close this redundant redirect window
+        window.close();
+    }
+
+    // 2. Otherwise, run the normal status check for the main window
+    checkStatus();
+</script>
+</body>
+</html>
